@@ -1,5 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, Calendar, Tag, User, Globe, CheckCircle, XCircle } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { projects } from '../data/projects';
 import { projectDetails } from '../data/projectDetails';
 import MockupCarousel from '../components/MockupCarousel';
@@ -269,60 +274,73 @@ const ProjectDetail = () => {
 
       {/* Before/After Comparison Section (solo per Betta47) - A tutta larghezza */}
       {beforeAfterData && (
-        <section className="py-16 bg-slate-50">
+        <section className="pt-10 pb-16 bg-slate-50">
           <div className="container-custom">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Trasformazione Digitale</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Trasformazione Digitale</h2>
 
             {/* Comparison Carousel */}
             <div className="mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+                className="comparison-carousel"
+              >
                 {beforeAfterData.comparisonImages.map((comparison, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div className="p-4 bg-slate-50 border-b">
-                      <h3 className="text-lg font-semibold text-slate-900 text-center">{comparison.title}</h3>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-                      {/* Before */}
-                      <div>
-                        <div className="text-center mb-3">
-                          <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <XCircle className="w-4 h-4 text-red-500" />
+                  <SwiperSlide key={index}>
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <div className="p-4 bg-slate-50 border-b">
+                        <h3 className="text-lg font-semibold text-slate-900 text-center">{comparison.title}</h3>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+                        {/* Before */}
+                        <div>
+                          <div className="text-center mb-3">
+                            <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                              <XCircle className="w-4 h-4 text-red-500" />
+                            </div>
+                            <h4 className="font-semibold text-slate-900">Prima</h4>
                           </div>
-                          <h4 className="font-semibold text-slate-900">Prima</h4>
-                        </div>
-                        <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.before})` }}>
-                          {/* Fallback */}
-                          <div className="w-full h-full bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
-                            <div className="text-center">
-                              <XCircle className="w-12 h-12 text-red-400 mx-auto mb-2" />
-                              <p className="text-red-600 font-medium">Screenshot Vecchio</p>
+                          <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.before})` }}>
+                            {/* Fallback */}
+                            <div className="w-full h-full bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
+                              <div className="text-center">
+                                <XCircle className="w-12 h-12 text-red-400 mx-auto mb-2" />
+                                <p className="text-red-600 font-medium">Screenshot Vecchio</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* After */}
-                      <div>
-                        <div className="text-center mb-3">
-                          <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
+                        {/* After */}
+                        <div>
+                          <div className="text-center mb-3">
+                            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                              <CheckCircle className="w-4 h-4 text-green-500" />
+                            </div>
+                            <h4 className="font-semibold text-slate-900">Dopo</h4>
                           </div>
-                          <h4 className="font-semibold text-slate-900">Dopo</h4>
-                        </div>
-                        <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.after})` }}>
-                          {/* Fallback */}
-                          <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                            <div className="text-center">
-                              <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-2" />
-                              <p className="text-green-600 font-medium">Screenshot Nuovo</p>
+                          <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.after})` }}>
+                            {/* Fallback */}
+                            <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                              <div className="text-center">
+                                <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-2" />
+                                <p className="text-green-600 font-medium">Screenshot Nuovo</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
             </div>
 
             {/* Comparison Details */}

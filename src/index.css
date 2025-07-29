@@ -91,6 +91,33 @@
   background: #334155;
 }
 
+/* Comparison Carousel Styles */
+.comparison-carousel .swiper-button-next,
+.comparison-carousel .swiper-button-prev {
+  color: #475569;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-carousel .swiper-button-next::after,
+.comparison-carousel .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.comparison-carousel .swiper-pagination-bullet {
+  background: #475569;
+  width: 10px;
+  height: 10px;
+}
+
+.comparison-carousel .swiper-pagination-bullet-active {
+  background: #334155;
+}
+
 /* Responsive Design */
 @media (max-width: 640px) {
   .container-custom {
