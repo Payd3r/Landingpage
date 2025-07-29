@@ -75,27 +75,21 @@ src/
 
 ### Prerequisiti
 
-- Docker
-- Docker Compose (opzionale)
+- Docker Desktop
+- Docker Compose (incluso con Docker Desktop)
 
 ### Metodo 1: Script Automatico
 
-#### Linux/macOS
-```bash
-chmod +x build.sh
-./build.sh
-```
-
 #### Windows (PowerShell)
 ```powershell
-.\build.ps1
+.\build-docker.ps1
 ```
 
 ### Metodo 2: Comandi Manuali
 
 1. **Build dell'immagine**
    ```bash
-   docker build -t portfolio-landing-page .
+   docker build -t vetrina-frontend .
    ```
 
 2. **Avvia con Docker Compose**
@@ -105,7 +99,7 @@ chmod +x build.sh
 
 3. **Oppure avvia con Docker**
    ```bash
-   docker run -d -p 80:80 --name portfolio-frontend portfolio-landing-page
+   docker run -d -p 80:80 --name vetrina_frontend vetrina-frontend
    ```
 
 4. **Accedi al sito**
@@ -192,8 +186,7 @@ npm run build        # Build di produzione
 npm run preview      # Preview build di produzione
 
 # Docker
-./build.sh           # Build e avvio automatico (Linux/macOS)
-.\build.ps1          # Build e avvio automatico (Windows)
+.\build-docker.ps1   # Build e avvio automatico (Windows)
 ```
 
 ## 🌐 Deployment
