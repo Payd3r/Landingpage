@@ -3,8 +3,8 @@ import type { Project } from '../types/Project';
 export const projects: Project[] = [
   {
     id: 'project-1',
-    title: 'E-commerce Landing Page',
-    description: 'Una landing page moderna e responsive per un e-commerce di abbigliamento. Focus su conversione e user experience ottimale.',
+    title: 'I Gladiatori - Pizzeria/Ristorante',
+    description: 'Una landing page moderna e responsive per un ristorante pizzeria.',
     shortDescription: 'Landing page e-commerce con design moderno e focus sulla conversione',
     image: '/mockups/ecommerce-thumb.jpg',
     mockups: [
@@ -14,7 +14,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     category: 'landing-page',
-    year: 2024,
+    year: 2025,
     client: 'Fashion Brand',
     url: 'https://example-ecommerce.com',
     features: [
@@ -37,8 +37,8 @@ export const projects: Project[] = [
   },
   {
     id: 'project-2',
-    title: 'SaaS Dashboard',
-    description: 'Dashboard completa per una piattaforma SaaS con analytics, gestione utenti e reporting avanzato.',
+    title: 'Betta47 B&B',
+    description: 'Landing page per un B&B di cantù con design moderno e responsive.',
     shortDescription: 'Dashboard SaaS con analytics e gestione utenti',
     image: '/mockups/saas-thumb.jpg',
     mockups: [
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Material-UI'],
     category: 'web-app',
-    year: 2024,
+    year: 2025,
     client: 'Tech Startup',
     url: 'https://example-saas.com',
     features: [
