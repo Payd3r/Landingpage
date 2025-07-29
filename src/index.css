@@ -3,60 +3,97 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-
-  /* Personalizzazione scrollbar */
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    border-radius: 10px;
-    border: 2px solid #f1f5f9;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-  }
-
-  /* Firefox scrollbar */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 #f1f5f9;
-  }
+/* Custom CSS Variables */
+:root {
+  --primary-color: #334155;
+  --secondary-color: #475569;
+  --accent-color: #475569;
 }
 
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105;
-  }
-  
-  .btn-secondary {
-    @apply inline-flex items-center px-6 py-3 bg-gradient-to-r from-slate-100 to-slate-200 text-slate-700 font-medium rounded-lg hover:from-slate-200 hover:to-slate-300 transition-all duration-200 shadow-md hover:shadow-lg;
-  }
-  
-  .btn-ghost {
-    @apply inline-flex items-center px-6 py-3 text-slate-600 font-medium hover:text-slate-800 transition-colors duration-200;
-  }
-  
-  .card {
-    @apply bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-100;
-  }
-  
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-slate-700 to-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-slate-800 hover:to-slate-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-white text-slate-900 px-6 py-3 rounded-lg font-semibold border-2 border-slate-200 hover:border-slate-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2;
+}
+
+.btn-ghost {
+  @apply text-slate-600 hover:text-slate-900 transition-colors duration-300;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100;
+}
+
+/* Gradient Backgrounds */
+.gradient-bg {
+  @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-slate-700 to-slate-600 bg-clip-text text-transparent;
+}
+
+.accent-gradient {
+  @apply bg-gradient-to-r from-slate-700 to-slate-600;
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Swiper Carousel Styles */
+.mockup-carousel .swiper-button-next,
+.mockup-carousel .swiper-button-prev {
+  color: #475569;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.mockup-carousel .swiper-button-next::after,
+.mockup-carousel .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mockup-carousel .swiper-pagination-bullet {
+  background: #475569;
+  width: 10px;
+  height: 10px;
+}
+
+.mockup-carousel .swiper-pagination-bullet-active {
+  background: #334155;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply px-4;
   }
 }

@@ -13,14 +13,11 @@ const Projects = () => {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="gradient-bg pt-20 pb-16">
         <div className="container-custom text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-slate-800 mb-6">
-            I miei progetti
-          </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Una selezione dei miei lavori più recenti. Ogni progetto rappresenta una sfida unica e un'opportunità per creare qualcosa di straordinario.
-          </p>
+          <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
+            I nostri progetti
+          </h1>         
         </div>
       </section>
 
@@ -40,13 +37,13 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-slate-900 text-white py-20">
+      <section className="accent-gradient text-white py-20">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-bold mb-6">Hai un progetto in mente?</h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-lg">
-            Sono sempre interessato a nuovi progetti stimolanti. Contattami per discutere di come posso aiutarti a realizzare la tua visione.
+          <p className="text-slate-200 mb-8 max-w-2xl mx-auto text-lg">
+            Siamo sempre interessati a nuovi progetti stimolanti. Contattaci per discutere di come possiamo aiutarti a realizzare la tua visione.
           </p>
-          <a href="/contact" className="btn-primary bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-4">
+          <a href="/contact" className="btn-secondary bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-4">
             Inizia una conversazione
           </a>
         </div>

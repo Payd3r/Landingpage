@@ -1,19 +1,14 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
-  shortDescription: string;
   image: string;
-  mockups: string[];
-  technologies: string[];
-  category: 'landing-page' | 'web-app' | 'mobile-app' | 'other';
   year: number;
   client?: string;
   url?: string;
   github?: string;
-  features: string[];
-  challenges: string[];
-  solutions: string[];
+  category: 'Pizzeria & Ristorante' | 'Bed & Breakfast' | 'Centro Estetico';
 }
 
 export interface ProjectCategory {

@@ -1,111 +1,280 @@
-import { Code, Palette, Smartphone, Users, Heart, Zap, Star } from 'lucide-react';
+import { Code, Camera, Heart, Zap, Star, CheckCircle, ExternalLink, Instagram } from 'lucide-react';
 
 const About = () => {
-  const skills = [
-    { name: 'React & TypeScript', percentage: 95, icon: Code },
-    { name: 'UI/UX Design', percentage: 90, icon: Palette },
-    { name: 'Mobile Development', percentage: 85, icon: Smartphone },
-    { name: 'Node.js & Backend', percentage: 80, icon: Users },
-  ];
-
-  const experiences = [
+  const teamMembers = [
     {
-      year: '2024',
-      title: 'Freelance Developer',
-      description: 'Sviluppo di landing page e applicazioni web per clienti di tutto il mondo.',
-      icon: Zap
-    },
-    {
-      year: '2023',
-      title: 'Frontend Developer',
-      description: 'Specializzato in React e TypeScript per applicazioni moderne.',
-      icon: Code
-    },
-    {
-      year: '2022',
-      title: 'UI/UX Designer',
-      description: 'Creazione di interfacce user-friendly e esperienze digitali coinvolgenti.',
-      icon: Palette
-    }
-  ];
-
-  const services = [
-    {
-      title: 'Landing Page',
-      description: 'Creo landing page che convertono visitatori in clienti.',
-      icon: Heart,
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      title: 'Web Applications',
-      description: 'Sviluppo applicazioni web complete e funzionali.',
+      name: 'Andrea Mauri',
+      role: 'Programmatore Full-Stack',
+      description: 'Specializzato in React, TypeScript e sviluppo web moderno. Creo applicazioni performanti e user-friendly che trasformano le idee in realtà digitali.',
+      skills: ['React', 'TypeScript', 'Node.js', 'UI/UX'],
       icon: Code,
-      color: 'from-blue-500 to-purple-500'
+      portfolio: 'https://andrea-mauri.duckdns.org/',
+      github: 'https://github.com/Payd3r'
     },
     {
-      title: 'Mobile Apps',
-      description: 'Applicazioni mobile native e ibride per iOS e Android.',
-      icon: Smartphone,
-      color: 'from-green-500 to-teal-500'
+      name: 'Ilaria Gatti',
+      role: 'UGC Creator & Freelance Creativa',
+      description: 'Esperta in fotografia professionale e copywriting. Mi occupo di creare contenuti visivi accattivanti e testi che raccontano la storia del tuo brand.',
+      skills: ['Fotografia', 'Copywriting', 'Social Media', 'Branding'],
+      icon: Camera,
+      instagram: 'https://www.instagram.com/ilaria_gatti/'
     }
+  ];
+
+  const packages = [
+    {
+      category: '🏡 AIRBNB / CASA VACANZE',
+      plans: [
+        {
+          name: 'Base',
+          originalPrice: 200,
+          discountedPrice: 140,
+          features: [
+            'Sito 3 pagine (Home – Struttura – Servizi)',
+            '20 foto professionali',
+            'Form contatti',
+            'Collegamento ai social',
+            'Pulsante "chiama ora" per mobile',
+            'Hosting e dominio (10€/anno)'
+          ]
+        },
+        {
+          name: 'Pro',
+          originalPrice: 300,
+          discountedPrice: 210,
+          isPopular: true,
+          features: [
+            'Tutto del Base, più:',
+            'Multilingua (ITA+ENG)',
+            'Prenotazione diretta con Email (gratis)',
+            'WhatsApp (+10€)',
+            '10 foto aggiuntive',
+            'Integrazione mappa e meteo',
+            'Recensioni Airbnb integrate',
+            'PDF guida turistica personalizzata'
+          ]
+        },
+        {
+          name: 'Premium',
+          originalPrice: 450,
+          discountedPrice: 315,
+          features: [
+            'Tutto del Pro, più:',
+            'House tour video',
+            'Video drone della location',
+            'Calendario sincronizzato con Airbnb / Booking',
+            'SEO base',
+            'Analisi visite (Google Analytics o Matomo)',
+            'Traduzioni professionali (1 lingua inclusa)',
+            'QR Code con link al sito (per stampa)'
+          ]
+        }
+      ]
+    },
+    {
+      category: '🍕 RISTORANTI / PIZZERIE',
+      plans: [
+        {
+          name: 'Base',
+          originalPrice: 180,
+          discountedPrice: 126,
+          features: [
+            'Sito 3 pagine (Home – Menù – Contatti)',
+            '20 foto professionali',
+            'Form contatti',
+            'Collegamento ai social',
+            'Hosting e dominio (10€/anno)'
+          ]
+        },
+        {
+          name: 'Pro',
+          originalPrice: 280,
+          discountedPrice: 196,
+          isPopular: true,
+          features: [
+            'Tutto del Base, più:',
+            'Multilingua (ITA+ENG)',
+            '10 foto aggiuntive',
+            'Foto professionale del menù',
+            'Video piatti richiesti (fino a 3 piatti)',
+            'Prenotazione tavolo via email o WhatsApp',
+            'Menu scaricabile PDF',
+            'Pulsante "chiama ora"'
+          ]
+        },
+        {
+          name: 'Premium',
+          originalPrice: 420,
+          discountedPrice: 294,
+          features: [
+            'Tutto del Pro, più:',
+            'Sistema prenotazioni online',
+            'Video 360° o tour del locale',
+            'Newsletter integrata (setup incluso)',
+            'SEO base',
+            'Analytics + Pixel Meta',
+            'QR code per menù/sito',
+            'Template Canva (menù o promo stories)'
+          ]
+        }
+      ]
+    },
+    {
+      category: '💇‍♀️ ESTETISTE / PARRUCCHIERI',
+      plans: [
+        {
+          name: 'Base',
+          originalPrice: 180,
+          discountedPrice: 126,
+          isPopular: true,
+          features: [
+            'Sito 3 pagine (Home – Servizi o Galleria – Contatti)',
+            '20 foto professionali',
+            'Form contatti',
+            'Collegamento ai social',
+            'Hosting e dominio (10€/anno)'
+          ]
+        },
+        {
+          name: 'Pro',
+          originalPrice: 280,
+          discountedPrice: 196,
+          features: [
+            'Tutto del Base, più:',
+            'Multilingua (ITA+ENG)',
+            '10 foto aggiuntive',
+            'Video location',
+            'Prenotazione appuntamenti: Email, WhatsApp',
+            'Galleria "prima/dopo" servizi',
+            'Recensioni clienti visibili'
+          ]
+        },
+        {
+          name: 'Premium',
+          originalPrice: 420,
+          discountedPrice: 294,
+          features: [
+            'Tutto del Pro, più:',
+            'Sistema gestionale appuntamenti (es. Calendly integrato)',
+            'Video testimonianze clienti',
+            'Gift card digitale',
+            'Blog/News (1 articolo incluso)',
+            'Mini Brand Kit: colori + font + logo base',
+            'SEO base + Analytics'
+          ]
+        }
+      ]
+    }
+  ];
+
+  const extras = [
+    { name: 'Pagina aggiuntiva', price: 15 },
+    { name: 'Video recensioni clienti', price: 15 },
+    { name: 'Traduzioni aggiuntive', price: 25, note: '/lingua' },
+    { name: 'Blog/news page', price: 15, note: '/pagina o 30€/mese' },
+    { name: 'Brochure', price: 20 },
+    { name: 'Biglietto da visita', price: 50 },
+    { name: 'Logo', price: 30 },
+    { name: 'Mini Kit Canva per stories/post', price: 25 },
+    { name: 'Template listino prezzi', price: 10 },
+    { name: 'Newsletter', price: 20, note: '/mese' },
+    { name: 'Menu delivery/asporto online', price: 30, note: 'da' },
+    { name: 'Gestione newsletter', price: 20, note: '/mese' }
   ];
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
+      <section className="gradient-bg py-20">
         <div className="container-custom text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl font-bold text-slate-800 mb-6">
-              Ciao, sono <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Andrea</span>
+            <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
+              Chi siamo 
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Sviluppatore web creativo che trasforma idee in esperienze digitali straordinarie. 
-              Amo creare soluzioni che non solo funzionano, ma ispirano.
+              Un team di due professionisti appassionati che unisce competenze tecniche e creative 
+              per creare esperienze digitali straordinarie. Trasformiamo le tue idee in realtà.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-slate-600">
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-500" />
-                <span>5+ anni di esperienza</span>
+                <Star className="w-5 h-5 text-slate-900" />
+                <span>Progetti completati con successo</span>
               </div>
               <div className="flex items-center gap-2">
-                <Heart className="w-5 h-5 text-red-500" />
-                <span>50+ progetti completati</span>
+                <Heart className="w-5 h-5 text-slate-900" />
+                <span>Clienti soddisfatti</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-blue-500" />
-                <span>100% soddisfazione clienti</span>
+                <Zap className="w-5 h-5 text-slate-900" />
+                <span>Soluzioni personalizzate</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Team Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Le mie competenze</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Il nostro team</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Tecnologie e strumenti che uso per creare esperienze digitali straordinarie
+              Due professionisti, una visione comune: creare esperienze digitali che fanno la differenza
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <div key={index} className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <skill.icon className="w-6 h-6 text-blue-500" />
-                    <h3 className="text-lg font-semibold text-slate-800">{skill.name}</h3>
-                  </div>
-                  <span className="text-sm font-medium text-slate-600">{skill.percentage}%</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="card p-8 text-center">
+                <div className="w-24 h-24 accent-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                  <member.icon className="w-12 h-12 text-white" />
                 </div>
-                <div className="w-full bg-slate-200 rounded-full h-3">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-1000"
-                    style={{ width: `${skill.percentage}%` }}
-                  ></div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{member.name}</h3>
+                <p className="text-lg text-slate-600 mb-4">{member.role}</p>
+                <p className="text-slate-600 mb-6 leading-relaxed">{member.description}</p>
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  {member.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className="px-3 py-1 bg-slate-700 text-slate-100 rounded-full text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  {member.portfolio && (
+                    <a
+                      href={member.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm font-medium">Portfolio</span>
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors"
+                    >
+                      <Code className="w-4 h-4" />
+                      <span className="text-sm font-medium">GitHub</span>
+                    </a>
+                  )}
+                  {member.instagram && (
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors"
+                    >
+                      <Instagram className="w-4 h-4" />
+                      <span className="text-sm font-medium">Instagram</span>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -113,30 +282,51 @@ const About = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Packages Section */}
+      <section className="py-20 gradient-bg">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">La mia esperienza</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">I nostri pacchetti</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Un percorso di crescita e apprendimento continuo
+              Soluzioni complete e personalizzate per ogni esigenza. 
+              <span className="font-semibold text-slate-900"> Tutti i prezzi scontati del 30%!</span>
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            {experiences.map((exp, index) => (
-              <div key={index} className="flex items-start gap-6 mb-8 last:mb-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <exp.icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-2">
-                    <span className="text-2xl font-bold text-blue-500">{exp.year}</span>
-                    <h3 className="text-xl font-semibold text-slate-800">{exp.title}</h3>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed">{exp.description}</p>
+          <div className="space-y-16">
+            {packages.map((category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">{category.category}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {category.plans.map((plan, planIndex) => (
+                    <div key={planIndex} className="card p-8 relative h-full flex flex-col">
+                      {plan.isPopular && (
+                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                          <span className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Più popolare
+                          </span>
+                        </div>
+                      )}
+                      <div className="text-center mb-6">
+                        <h4 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h4>
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <span className="text-3xl font-bold text-slate-900">€{plan.discountedPrice}</span>
+                          <span className="text-lg text-slate-500 line-through">€{plan.originalPrice}</span>
+                        </div>
+                        <span className="text-sm text-green-600 font-semibold">Sconto 30%</span>
+                      </div>
+                      <div className="flex-1">
+                        <ul className="space-y-3">
+                          {plan.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-slate-600 text-sm">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -144,24 +334,28 @@ const About = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Extras Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Cosa posso fare per te</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Servizi aggiuntivi</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Servizi personalizzati per trasformare le tue idee in realtà digitali
+              Personalizza ulteriormente il tuo pacchetto con questi servizi extra
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="text-center group">
-                <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-10 h-10 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {extras.map((extra, index) => (
+              <div key={index} className="card p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-1">{extra.name}</h3>
+                    {extra.note && (
+                      <p className="text-sm text-slate-500">{extra.note}</p>
+                    )}
+                  </div>
+                  <span className="text-lg font-bold text-slate-900">€{extra.price}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -169,13 +363,13 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-500 to-purple-600 text-white py-20">
+      <section className="accent-gradient text-white py-20">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-bold mb-6">Pronto a iniziare il tuo progetto?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Parliamo di come posso aiutarti a realizzare la tua visione digitale
+            Contattaci per una consulenza gratuita e scopri come possiamo aiutarti a realizzare la tua visione digitale
           </p>
-          <a href="/contact" className="btn-primary bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-4">
+          <a href="/contact" className="btn-secondary bg-white text-slate-900 hover:bg-slate-100 text-lg px-8 py-4">
             Iniziamo a collaborare
           </a>
         </div>

@@ -1,12 +1,13 @@
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Email', href: 'mailto:andrea@example.com', icon: Mail },
-    { name: 'LinkedIn', href: 'https://linkedin.com/in/andrea-mauri', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/andrea-mauri', icon: Github },
+    { name: 'Email', href: 'mailto:info@revai.it', icon: Mail },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/revai', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/revai', icon: Github },
+    { name: 'Instagram', href: 'https://instagram.com/revai', icon: Instagram },
   ];
 
   return (
@@ -15,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
             <p className="text-slate-400 text-sm">
-              © {currentYear} Andrea Mauri. Tutti i diritti riservati.
+              © {currentYear} Revai. Tutti i diritti riservati.
             </p>
           </div>
           

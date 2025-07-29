@@ -8,17 +8,17 @@ const Header = () => {
 
   const navigation = [
     { name: 'Progetti', href: '/' },
-    { name: 'Chi Sono', href: '/about' },
+    { name: 'About', href: '/about' },
     { name: 'Contatti', href: '/contact' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-slate-800">
-           
+          <Link to="/" className="text-xl font-bold text-slate-900">
+            Revai
           </Link>
 
           {/* Desktop Navigation */}
@@ -27,10 +27,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-md font-bold transition-colors ${
+                className={`text-md font-semibold transition-colors ${
                   location.pathname === item.href
-                    ? 'text-blue-600'
-                    : 'text-slate-600 hover:text-slate-800'
+                    ? 'text-slate-900'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 {item.name}
@@ -41,7 +41,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-slate-600 hover:text-slate-800"
+            className="md:hidden p-2 text-slate-600 hover:text-slate-900"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -57,8 +57,8 @@ const Header = () => {
                   to={item.href}
                   className={`text-sm font-medium transition-colors ${
                     location.pathname === item.href
-                      ? 'text-blue-600'
-                      : 'text-slate-600 hover:text-slate-800'
+                      ? 'text-slate-900'
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
