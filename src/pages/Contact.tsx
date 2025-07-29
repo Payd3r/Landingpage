@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Heart, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,19 +27,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: Mail,
       title: 'Email',
-      value: 'info@example.com',
-      href: 'mailto:info@example.com'
+      value: 'andrea@example.com',
+      href: 'mailto:andrea@example.com'
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: Phone,
       title: 'Telefono',
       value: '+39 123 456 7890',
       href: 'tel:+391234567890'
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
+      icon: MapPin,
       title: 'Località',
       value: 'Milano, Italia',
       href: '#'
@@ -49,52 +49,45 @@ const Contact = () => {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 mb-6">
-              Parliamo del Tuo Progetto
-            </h1>
-            <p className="text-xl text-slate-600">
-              Hai un'idea in mente? Sono qui per aiutarti a trasformarla in realtà. 
-              Contattami e iniziamo a collaborare!
-            </p>
-          </div>
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
+        <div className="container-custom text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold text-slate-800 mb-6">
+            Parliamo del tuo progetto
+          </h1>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Sono sempre entusiasta di nuove collaborazioni. Raccontami la tua idea e insieme 
+            la trasformeremo in qualcosa di straordinario.
+          </p>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-slate-800 mb-6">
-                Invia un Messaggio
-              </h2>
-              
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-slate-800 mb-4">Invia un messaggio</h2>
+                <p className="text-slate-600">
+                  Compila il form qui sotto e ti risponderò entro 24 ore.
+                </p>
+              </div>
+
               {isSubmitted ? (
-                <div className="card p-8 text-center">
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-semibold text-slate-800 mb-2">
-                    Messaggio Inviato!
-                  </h3>
-                  <p className="text-slate-600 mb-6">
+                  <h3 className="text-2xl font-bold text-slate-800 mb-2">Messaggio inviato!</h3>
+                  <p className="text-slate-600">
                     Grazie per avermi contattato. Ti risponderò al più presto!
                   </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="btn-primary"
-                  >
-                    Invia un Altro Messaggio
-                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                        Nome *
+                        Nome completo
                       </label>
                       <input
                         type="text"
@@ -103,13 +96,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                         placeholder="Il tuo nome"
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                        Email *
+                        Email
                       </label>
                       <input
                         type="email"
@@ -118,7 +111,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                         placeholder="la-tua-email@example.com"
                       />
                     </div>
@@ -126,7 +119,7 @@ const Contact = () => {
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                      Oggetto *
+                      Oggetto
                     </label>
                     <input
                       type="text"
@@ -135,14 +128,14 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="Di cosa vuoi parlare?"
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      Messaggio *
+                      Messaggio
                     </label>
                     <textarea
                       id="message"
@@ -151,17 +144,17 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                       placeholder="Raccontami del tuo progetto..."
                     />
                   </div>
                   
                   <button
                     type="submit"
-                    className="btn-primary inline-flex items-center gap-2"
+                    className="btn-primary w-full text-lg py-4"
                   >
-                    <Send className="w-5 h-5" />
-                    Invia Messaggio
+                    <Send className="w-5 h-5 mr-2" />
+                    Invia messaggio
                   </button>
                 </form>
               )}
@@ -169,76 +162,65 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold text-slate-800 mb-6">
-                Informazioni di Contatto
-              </h2>
-              
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-slate-800 mb-4">Informazioni di contatto</h2>
+                <p className="text-slate-600">
+                  Preferisci contattarmi direttamente? Ecco i miei recapiti.
+                </p>
+              </div>
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="card p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="text-blue-500 mt-1">
-                        {info.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-slate-800 mb-1">
-                          {info.title}
-                        </h3>
-                        <a
-                          href={info.href}
-                          className="text-slate-600 hover:text-blue-500 transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      </div>
+                  <a
+                    key={index}
+                    href={info.href}
+                    className="flex items-center p-6 bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <info.icon className="w-6 h-6 text-white" />
                     </div>
-                  </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-800 mb-1">{info.title}</h3>
+                      <p className="text-slate-600">{info.value}</p>
+                    </div>
+                  </a>
                 ))}
               </div>
 
-              {/* Additional Info */}
-              <div className="card p-6 mt-8">
-                <h3 className="text-lg font-semibold text-slate-800 mb-4">
-                  Orari di Lavoro
-                </h3>
-                <div className="space-y-2 text-slate-600">
-                  <div className="flex justify-between">
-                    <span>Lunedì - Venerdì</span>
-                    <span>9:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sabato</span>
-                    <span>10:00 - 14:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Domenica</span>
-                    <span>Chiuso</span>
-                  </div>
-                </div>
+              <div className="mt-12 p-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl text-white text-center">
+                <Heart className="w-12 h-12 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Collaborazione entusiasta</h3>
+                <p className="opacity-90">
+                  Ogni progetto è un'opportunità per creare qualcosa di straordinario insieme.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">
-              Pronto a Iniziare?
-            </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Non esitare a contattarmi per discutere del tuo progetto. 
-              La prima consulenza è gratuita!
+      {/* Working Hours */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container-custom text-center">
+          <div className="max-w-2xl mx-auto">
+            <MessageCircle className="w-16 h-16 text-blue-500 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Orari di lavoro</h2>
+            <p className="text-slate-600 mb-8">
+              Sono disponibile per nuove collaborazioni e progetti stimolanti
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:info@example.com" className="btn-primary">
-                Invia Email
-              </a>
-              <a href="tel:+391234567890" className="btn-secondary">
-                Chiama Ora
-              </a>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="font-semibold text-slate-800 mb-2">Lunedì - Venerdì</h3>
+                <p className="text-slate-600">9:00 - 18:00</p>
+              </div>
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="font-semibold text-slate-800 mb-2">Sabato</h3>
+                <p className="text-slate-600">10:00 - 14:00</p>
+              </div>
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="font-semibold text-slate-800 mb-2">Domenica</h3>
+                <p className="text-slate-600">Chiuso</p>
+              </div>
             </div>
           </div>
         </div>
