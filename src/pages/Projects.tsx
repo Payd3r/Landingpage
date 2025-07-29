@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
-import type Project from '../types/Project';
+import type { Project } from '../types/Project';
 
 const Projects = () => {
   const navigate = useNavigate();

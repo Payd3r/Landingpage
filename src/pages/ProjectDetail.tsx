@@ -93,7 +93,7 @@ const ProjectDetail = () => {
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-slate-800 mb-6">Mockups del progetto</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {project.mockups.map((mockup, index) => (
+                  {project.mockups.map((_, index) => (
                     <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                       <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
                         <div className="text-center">

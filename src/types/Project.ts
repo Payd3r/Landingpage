@@ -21,6 +21,3 @@ export interface ProjectCategory {
   name: string;
   description: string;
 }
-
-// Export di default per compatibilità
-export default Project;

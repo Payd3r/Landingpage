@@ -1,4 +1,4 @@
-import { Code, Palette, Smartphone, Users, Award, Clock, Heart, Zap, Star } from 'lucide-react';
+import { Code, Palette, Smartphone, Users, Heart, Zap, Star } from 'lucide-react';
 
 const About = () => {
   const skills = [
