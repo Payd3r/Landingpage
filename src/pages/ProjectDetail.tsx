@@ -248,7 +248,7 @@ const ProjectDetail = () => {
               </div>
 
               {/* Testimonial Card */}
-              <div className="card p-6 accent-gradient text-white">
+              <div className="card p-6 accent-gradient text-white hidden">
                 <h3 className="text-lg font-semibold mb-4">Testimonianza cliente</h3>
                 <p className="text-slate-200 mb-4 italic">"{projectDetail.testimonial.text}"</p>
                 <div className="border-t border-slate-200 pt-4">
@@ -274,7 +274,7 @@ const ProjectDetail = () => {
 
       {/* Before/After Comparison Section (solo per Betta47) - A tutta larghezza */}
       {beforeAfterData && (
-        <section className="pt-10 pb-16 bg-slate-50">
+        <section className="pt-10 pb-16 bg-slate-50 hidden">
           <div className="container-custom">
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Trasformazione Digitale</h2>
 

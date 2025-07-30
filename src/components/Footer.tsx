@@ -4,10 +4,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Email', href: 'mailto:info@revai.it', icon: Mail },
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/revai', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/revai', icon: Github },
-    { name: 'Instagram', href: 'https://instagram.com/revai', icon: Instagram },
+    { name: 'Email', href: 'mailto:andreamauri2013@gmail.com', icon: Mail },    
+    { name: 'GitHub', href: 'https://github.com/Payd3r', icon: Github },
   ];
 
   return (

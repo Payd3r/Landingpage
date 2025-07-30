@@ -8,7 +8,7 @@ const About = () => {
       description: 'Specializzato in React, TypeScript e sviluppo web moderno. Creo applicazioni performanti e user-friendly che trasformano le idee in realtà digitali.',
       skills: ['React', 'TypeScript', 'Node.js', 'UI/UX'],
       icon: Code,
-      portfolio: 'https://andrea-mauri.duckdns.org/',
+      portfolio: 'https://portfolio.andrea-mauri.duckdns.org/',
       github: 'https://github.com/Payd3r'
     },
     {
@@ -17,7 +17,7 @@ const About = () => {
       description: 'Esperta in fotografia professionale e copywriting. Mi occupo di creare contenuti visivi accattivanti e testi che raccontano la storia del tuo brand.',
       skills: ['Fotografia', 'Copywriting', 'Social Media', 'Branding'],
       icon: Camera,
-      instagram: 'https://www.instagram.com/ilaria_gatti/'
+      instagram: 'https://www.instagram.com/ilariaugc/'
     }
   ];
 

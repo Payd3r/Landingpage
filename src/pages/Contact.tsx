@@ -29,14 +29,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@revai.it',
-      href: 'mailto:info@revai.it'
+      value: 'andreamauri2013@gmail.com',
+      href: 'mailto:andreamauri2013@gmail.com'
     },
     {
       icon: Phone,
       title: 'Telefono',
-      value: '+39 123 456 7890',
-      href: 'tel:+391234567890'
+      value: '+39 339 537 5902',
+      href: 'tel:+39339537590'
     },
     {
       icon: MapPin,
