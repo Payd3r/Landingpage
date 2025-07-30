@@ -10,9 +10,9 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   // Mappa per le immagini delle card
   const getCardImage = (projectId: string) => {
     const imageMap: Record<string, string> = {
-      'project-1': '/cardCover/igladiatori.jpg', // Placeholder per ora
+      'project-1': '/cardCover/i_gladiatori.jpg', // Placeholder per ora
       'project-2': '/cardCover/betta47.jpg',
-      'project-3': '/cardCover/lechic.jpg', // Placeholder per ora
+      'project-3': '/cardCover/le_chic.jpg', // Placeholder per ora
     };
     return imageMap[projectId] || null;
   };
