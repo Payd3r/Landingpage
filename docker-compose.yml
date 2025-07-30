@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vetrina_frontend
+    container_name: revai_frontend
     restart: unless-stopped
     environment:
       NODE_ENV: production
