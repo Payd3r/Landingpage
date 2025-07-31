@@ -57,10 +57,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
     
     // Mockups (percorsi delle immagini)
     mockups: [
-      '/mockups/igladiatori-desktop.jpg',
-      '/mockups/igladiatori-mobile.jpg',
-      '/mockups/igladiatori-tablet.jpg'
+      '/carouselMockup/I_Gladiatori/0.png',
+      '/carouselMockup/I_Gladiatori/1.png',
     ],
+    
+    // Immagine di sfondo per la hero section
+    heroImage: '/carouselMockup/I_Gladiatori/0.png',
     
     // Testimonianza cliente
     testimonial: {
@@ -121,10 +123,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/mockups/betta47-desktop.jpg',
-      '/mockups/betta47-mobile.jpg',
-      '/mockups/betta47-tablet.jpg'
+      '/carouselMockup/Betta47/0.png',
+      '/carouselMockup/Betta47/1.png',
     ],
+    
+    // Immagine di sfondo per la hero section
+    heroImage: '/carouselMockup/Betta47/0.png',
     
     testimonial: {
       text: 'Il nuovo sito ha completamente rivoluzionato la nostra presenza online. Ora abbiamo un sito moderno e professionale che riflette la qualità del nostro B&B.',
@@ -184,10 +188,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/mockups/lechic-desktop.jpg',
-      '/mockups/lechic-mobile.jpg',
-      '/mockups/lechic-tablet.jpg'
+      '/carouselMockup/Le_chic/0.jpg',
+      '/carouselMockup/Le_chic/1.jpg',
     ],
+    
+    // Immagine di sfondo per la hero section
+    heroImage: '/carouselMockup/Le_chic/0.jpg',
     
     testimonial: {
       text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora abbiamo una galleria professionale dei nostri servizi e i clienti possono prenotare facilmente online.',

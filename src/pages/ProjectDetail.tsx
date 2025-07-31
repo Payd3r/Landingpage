@@ -69,8 +69,20 @@ const ProjectDetail = () => {
   return (
     <div className="pt-16 bg-white">
       {/* Hero Section */}
-      <section className="gradient-bg py-16">
-        <div className="container-custom">
+      <section className="gradient-bg py-16 relative overflow-hidden">
+        {/* Immagine di sfondo con opacità e proporzioni mantenute */}
+        <div className="absolute inset-0">
+          <img 
+            src={projectDetail.heroImage}
+            alt={`${project.title} background`}
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+        
+        {/* Overlay per migliorare la leggibilità */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70" />
+        
+        <div className="container-custom relative z-10">
           <Link
             to="/projects"
             className="inline-flex items-center text-slate-900 hover:text-slate-700 mb-8 transition-colors"

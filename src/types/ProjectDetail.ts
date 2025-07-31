@@ -22,6 +22,9 @@ export interface ProjectDetail {
   // Mockups
   mockups: string[];
   
+  // Immagine di sfondo per la hero section
+  heroImage: string;
+  
   // Testimonianza cliente
   testimonial: {
     text: string;

@@ -3,6 +3,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { projectDetails } from '../data/projectDetails';
 
 interface MockupCarouselProps {
   projectTitle: string;
@@ -10,29 +11,9 @@ interface MockupCarouselProps {
 }
 
 const MockupCarousel = ({ projectTitle, projectId }: MockupCarouselProps) => {
-  // Mappa per le immagini dei mockup
-  const getMockupImages = (projectId: string) => {
-    const mockupMap: Record<string, string[]> = {
-      'project-1': [
-        '/carouselMockup/I_Gladiatori/desktop.jpg',
-        '/carouselMockup/I_Gladiatori/mobile.jpg',
-        '/carouselMockup/I_Gladiatori/tablet.jpg'
-      ],
-      'project-2': [
-        '/carouselMockup/Betta47/desktop.jpg',
-        '/carouselMockup/Betta47/mobile.jpg',
-        '/carouselMockup/Betta47/tablet.jpg'
-      ],
-      'project-3': [
-        '/carouselMockup/Le_chic/desktop.jpg',
-        '/carouselMockup/Le_chic/mobile.jpg',
-        '/carouselMockup/Le_chic/tablet.jpg'
-      ],
-    };
-    return mockupMap[projectId] || [];
-  };
-
-  const mockupImages = getMockupImages(projectId);
+  // Ottieni le immagini mockup dal projectDetails
+  const projectDetail = projectDetails[projectId];
+  const mockupImages = projectDetail?.mockups || [];
 
   return (
     <div className="relative">
@@ -59,9 +40,21 @@ const MockupCarousel = ({ projectTitle, projectId }: MockupCarouselProps) => {
         {mockupImages.map((mockup, index) => (
           <SwiperSlide key={index}>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-[16/9] bg-cover bg-center" style={{ backgroundImage: `url(${mockup})` }}>
-                {/* Fallback se l'immagine non carica */}
-                <div className="w-full h-full bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center">
+              <div className="aspect-[16/9] relative">
+                <img 
+                  src={mockup}
+                  alt={`${projectTitle} mockup ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback se l'immagine non carica
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback che si mostra solo se l'immagine non carica */}
+                <div className="w-full h-full bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center hidden">
                   <div className="text-center">
                     <div className="text-slate-900 text-6xl font-bold mb-2">
                       {projectTitle.charAt(0)}
