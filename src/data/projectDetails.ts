@@ -57,8 +57,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     
     // Mockups (percorsi delle immagini)
     mockups: [
-      '/carouselMockup/I_Gladiatori/0.png',
       '/carouselMockup/I_Gladiatori/1.png',
+      '/carouselMockup/I_Gladiatori/2.png',
+      '/carouselMockup/I_Gladiatori/3.png',
     ],
     
     // Immagine di sfondo per la hero section
@@ -123,8 +124,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/carouselMockup/Betta47/0.png',
       '/carouselMockup/Betta47/1.png',
+      '/carouselMockup/Betta47/2.png',
+      '/carouselMockup/Betta47/3.png',
     ],
     
     // Immagine di sfondo per la hero section
@@ -188,12 +190,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     
     mockups: [
-      '/carouselMockup/Le_chic/0.jpg',
-      '/carouselMockup/Le_chic/1.jpg',
+      '/carouselMockup/Le_chic/1.png',
+      '/carouselMockup/Le_chic/2.png',
+      '/carouselMockup/Le_chic/3.png',
     ],
     
     // Immagine di sfondo per la hero section
-    heroImage: '/carouselMockup/Le_chic/0.jpg',
+    heroImage: '/carouselMockup/Le_chic/0.png',
     
     testimonial: {
       text: 'Il nuovo sito ha completamente trasformato la nostra presenza online. Ora abbiamo una galleria professionale dei nostri servizi e i clienti possono prenotare facilmente online.',

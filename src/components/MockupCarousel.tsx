@@ -16,7 +16,7 @@ const MockupCarousel = ({ projectTitle, projectId }: MockupCarouselProps) => {
   const mockupImages = projectDetail?.mockups || [];
 
   return (
-    <div className="relative">
+    <div className="relative shadow-lg">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
@@ -38,9 +38,9 @@ const MockupCarousel = ({ projectTitle, projectId }: MockupCarouselProps) => {
         className="mockup-carousel"
       >
         {mockupImages.map((mockup, index) => (
-          <SwiperSlide key={index}>
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-[16/9] relative">
+          <SwiperSlide key={index} className="shadow-lg overflow-hidden">
+            <div className="bg-white rounded-lg overflow-hidden">
+              <div className="aspect-[29/30] relative">
                 <img 
                   src={mockup}
                   alt={`${projectTitle} mockup ${index + 1}`}
