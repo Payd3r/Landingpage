@@ -25,6 +25,13 @@ export interface ProjectDetail {
   // Immagine di sfondo per la hero section
   heroImage: string;
   
+  // Confronto prima/dopo (opzionale)
+  beforeAfter?: Array<{
+    before: string;
+    after: string;
+    title?: string;
+  }>;
+
   // Testimonianza cliente
   testimonial: {
     text: string;

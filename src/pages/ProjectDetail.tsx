@@ -1,13 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag, User, Globe, CheckCircle, XCircle } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { ArrowLeft, ExternalLink, Github, Calendar, Tag, User, Globe } from 'lucide-react';
 import { projects } from '../data/projects';
 import { projectDetails } from '../data/projectDetails';
 import MockupCarousel from '../components/MockupCarousel';
+import BeforeAfterCarousel from '../components/BeforeAfterCarousel';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,40 +27,7 @@ const ProjectDetail = () => {
     );
   }
 
-  // Dati per il confronto prima/dopo (solo per Betta47)
-  const beforeAfterData = project.id === 'project-2' ? {
-    beforeProblems: [
-      'Sito molto vecchio ed esteticamente datato',
-      'Problemi di traduzione',
-      'Navigazione difficile e confusa',
-      'Design non responsive',
-      'Contenuti poco organizzati'
-    ],
-    afterSolutions: [
-      'Design moderno e professionale',
-      'Traduzioni corrette e ottimizzate',
-      'Navigazione intuitiva e user-friendly',
-      'Completamente responsive',
-      'Contenuti ben organizzati e strutturati'
-    ],
-    comparisonImages: [
-      {
-        before: '/carouselMockup/Betta47/before-1.jpg',
-        after: '/carouselMockup/Betta47/after-1.jpg',
-        title: 'Homepage'
-      },
-      {
-        before: '/carouselMockup/Betta47/before-2.jpg',
-        after: '/carouselMockup/Betta47/after-2.jpg',
-        title: 'Galleria'
-      },
-      {
-        before: '/carouselMockup/Betta47/before-3.jpg',
-        after: '/carouselMockup/Betta47/after-3.jpg',
-        title: 'Contatti'
-      }
-    ]
-  } : null;
+  const beforeAfterItems = projectDetail.beforeAfter || [];
 
   return (
     <div className="pt-16 bg-white">
@@ -150,19 +113,6 @@ const ProjectDetail = () => {
                 <MockupCarousel projectTitle={project.title} projectId={project.id} />
               </div>
 
-              {/* Business Goals */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">Obiettivi di business</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {projectDetail.businessGoals.map((goal: string, index: number) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-slate-700">{goal}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Features */}
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Caratteristiche principali</h2>
@@ -171,6 +121,27 @@ const ProjectDetail = () => {
                     <div key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-slate-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Before/After Comparison (solo per Betta47) */}
+              {project.id === 'project-2' && beforeAfterItems.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-6">Confronto Prima/Dopo</h2>
+                  <BeforeAfterCarousel items={beforeAfterItems} />
+                </div>
+              )}
+
+              {/* Business Goals */}
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-slate-900 mb-6">Obiettivi di business</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {projectDetail.businessGoals.map((goal: string, index: number) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-slate-700">{goal}</span>
                     </div>
                   ))}
                 </div>
@@ -284,126 +255,7 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Before/After Comparison Section (solo per Betta47) - A tutta larghezza */}
-      {beforeAfterData && (
-        <section className="pt-10 pb-16 bg-slate-50 hidden">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">Trasformazione Digitale</h2>
-
-            {/* Comparison Carousel */}
-            <div className="mb-8">
-              <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }}
-                className="comparison-carousel"
-              >
-                {beforeAfterData.comparisonImages.map((comparison, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                      <div className="p-4 bg-slate-50 border-b">
-                        <h3 className="text-lg font-semibold text-slate-900 text-center">{comparison.title}</h3>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-                        {/* Before */}
-                        <div>
-                          <div className="text-center mb-3">
-                            <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                              <XCircle className="w-4 h-4 text-red-500" />
-                            </div>
-                            <h4 className="font-semibold text-slate-900">Prima</h4>
-                          </div>
-                          <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.before})` }}>
-                            {/* Fallback */}
-                            <div className="w-full h-full bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
-                              <div className="text-center">
-                                <XCircle className="w-12 h-12 text-red-400 mx-auto mb-2" />
-                                <p className="text-red-600 font-medium">Screenshot Vecchio</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* After */}
-                        <div>
-                          <div className="text-center mb-3">
-                            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                              <CheckCircle className="w-4 h-4 text-green-500" />
-                            </div>
-                            <h4 className="font-semibold text-slate-900">Dopo</h4>
-                          </div>
-                          <div className="aspect-[4/3] bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${comparison.after})` }}>
-                            {/* Fallback */}
-                            <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                              <div className="text-center">
-                                <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-2" />
-                                <p className="text-green-600 font-medium">Screenshot Nuovo</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-
-            {/* Comparison Details */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Before Section */}
-              <div>
-                <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <XCircle className="w-6 h-6 text-red-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Prima</h3>
-                  <p className="text-slate-600">I problemi del sito esistente</p>
-                </div>
-
-                <div className="space-y-3">
-                  {beforeAfterData.beforeProblems.map((problem, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <XCircle className="w-3 h-3 text-red-500" />
-                      </div>
-                      <span className="text-slate-700">{problem}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* After Section */}
-              <div>
-                <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <CheckCircle className="w-6 h-6 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Dopo</h3>
-                  <p className="text-slate-600">Le soluzioni implementate</p>
-                </div>
-
-                <div className="space-y-3">
-                  {beforeAfterData.afterSolutions.map((solution, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-3 h-3 text-green-500" />
-                      </div>
-                      <span className="text-slate-700">{solution}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Sezione prima/dopo legacy rimossa in favore del nuovo slider con thumbs */}
     </div>
   );
 };

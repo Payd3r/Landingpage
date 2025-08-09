@@ -132,6 +132,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     // Immagine di sfondo per la hero section
     heroImage: '/carouselMockup/Betta47/0.png',
     
+    // Confronto prima/dopo
+    beforeAfter: [
+      { before: '/carouselMockup/Betta47/before-1.svg', after: '/carouselMockup/Betta47/after-1.svg', title: 'Homepage' },
+      { before: '/carouselMockup/Betta47/before-2.svg', after: '/carouselMockup/Betta47/after-2.svg', title: 'Camere' },
+      { before: '/carouselMockup/Betta47/before-3.svg', after: '/carouselMockup/Betta47/after-3.svg', title: 'Servizi' },
+      { before: '/carouselMockup/Betta47/before-4.svg', after: '/carouselMockup/Betta47/after-4.svg', title: 'Contatti' },
+    ],
+
     testimonial: {
       text: 'Il nuovo sito ha completamente rivoluzionato la nostra presenza online. Ora abbiamo un sito moderno e professionale che riflette la qualità del nostro B&B.',
       author: 'Anna Bianchi',
