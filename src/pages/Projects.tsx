@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
 import type { Project } from '../types/Project';
+import { Code, Users, Clock, Award } from 'lucide-react';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -12,12 +13,36 @@ const Projects = () => {
 
   return (
     <div className="pt-16">
-      {/* Header */}
+      {/* Hero Section */}
       <section className="gradient-bg pt-20 pb-16">
         <div className="container-custom text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">
-            I nostri progetti
-          </h1>         
+            Trasformiamo le tue idee in realtà digitali
+          </h1>
+          <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Creiamo siti web moderni e performanti per ristoranti, B&B e centri estetici. 
+            Ogni progetto è studiato su misura per far crescere il tuo business online.
+          </p>
+          
+          {/* Stats */}
+          <div className="flex flex-wrap justify-center gap-6 text-slate-600">
+            <div className="flex items-center gap-2">
+              <Code className="w-5 h-5 text-slate-900" />
+              <span><strong className="text-slate-900">4</strong> Progetti completati</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-slate-900" />
+              <span><strong className="text-slate-900">100%</strong> Clienti soddisfatti</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5 text-slate-900" />
+              <span><strong className="text-slate-900">7 giorni</strong> Delivery</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-slate-900" />
+              <span><strong className="text-slate-900">2 anni</strong> Esperienza</span>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink, Github, Calendar, Tag, User, Globe } from 'luc
 import { projects } from '../data/projects';
 import { projectDetails } from '../data/projectDetails';
 import MockupCarousel from '../components/MockupCarousel';
-import BeforeAfterCarousel from '../components/BeforeAfterCarousel';
+// import BeforeAfterCarousel from '../components/BeforeAfterCarousel';
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,7 +27,7 @@ const ProjectDetail = () => {
     );
   }
 
-  const beforeAfterItems = projectDetail.beforeAfter || [];
+  // const beforeAfterItems = projectDetail.beforeAfter || [];
 
   return (
     <div className="pt-16 bg-white">
@@ -126,13 +126,13 @@ const ProjectDetail = () => {
                 </div>
               </div>
 
-              {/* Before/After Comparison (solo per Betta47) */}
-              {project.id === 'project-2' && beforeAfterItems.length > 0 && (
+              {/* Before/After Comparison (solo per Betta47) - COMMENTATO */}
+              {/* {project.id === 'project-2' && beforeAfterItems.length > 0 && (
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold text-slate-900 mb-6">Confronto Prima/Dopo</h2>
                   <BeforeAfterCarousel items={beforeAfterItems} />
                 </div>
-              )}
+              )} */}
 
               {/* Business Goals */}
               <div className="mb-12">

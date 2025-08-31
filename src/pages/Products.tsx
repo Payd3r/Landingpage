@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Home, UtensilsCrossed, Scissors, CheckCircle, Star, ArrowRight, Package, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 
 // Types for our configurator
@@ -18,6 +18,41 @@ const Products = () => {
     extras: []
   });
   const [expandedExtra, setExpandedExtra] = useState<string | null>(null);
+
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+
+  // Detect keyboard/viewport changes
+  useEffect(() => {
+    const handleResize = () => {
+      const newHeight = window.visualViewport?.height || window.innerHeight;
+      const fullHeight = window.screen.height;
+      
+      // Se l'altezza è significativamente ridotta, probabilmente è aperta la tastiera
+      const heightRatio = newHeight / fullHeight;
+      const keyboardOpen = heightRatio < 0.75;
+      
+      setIsKeyboardOpen(keyboardOpen);
+    };
+
+    // Listen to visual viewport changes (more reliable for keyboard detection)
+    if ('visualViewport' in window && window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleResize);
+    } else {
+      // Fallback for older browsers
+      (window as any).addEventListener('resize', handleResize);
+    }
+
+    // Initial call
+    handleResize();
+
+    return () => {
+      if ('visualViewport' in window && window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleResize);
+      } else {
+        (window as any).removeEventListener('resize', handleResize);
+      }
+    };
+  }, []);
 
   // Business types data
   const businessTypes = [
@@ -530,9 +565,15 @@ const Products = () => {
       </section>
 
       {/* Content */}
-      <section className="pb-24 sm:pb-32 px-2 sm:px-4">
+      <section 
+        className={`px-2 sm:px-4 ${isKeyboardOpen ? 'pb-6 pt-20' : 'pb-24 sm:pb-32'}`}
+        style={{
+          // Adjust container height based on viewport when keyboard is open
+          minHeight: isKeyboardOpen ? 'auto' : undefined
+        }}
+      >
         <div className="container-custom">
-          <div className={`max-w-5xl mx-auto ${currentStep <= 2 || currentStep === 4 ? 'min-h-[calc(100vh-350px)] sm:h-[calc(100vh-450px)] flex items-top justify-center' : 'min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-250px)]'}`}>
+          <div className={`max-w-5xl mx-auto ${currentStep <= 2 || currentStep === 4 ? (isKeyboardOpen ? 'flex items-center justify-center py-4' : 'min-h-[calc(100vh-350px)] sm:h-[calc(100vh-450px)] flex items-top justify-center') : (isKeyboardOpen ? 'py-4' : 'min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-250px)]')}`}>
             <div className="w-full">
               <CurrentStepComponent />
             </div>
@@ -540,8 +581,20 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 sm:p-6">
+      {/* Navigation - Smart positioning for mobile keyboard */}
+      <div 
+        className={`
+          fixed left-0 right-0 bg-white border-t border-slate-200 p-3 sm:p-6 transition-all duration-300 z-50
+          ${isKeyboardOpen 
+            ? 'top-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 border-t-0' 
+            : 'bottom-0'
+          }
+        `}
+        style={{
+          // Su mobile, quando la tastiera è aperta, usa position sticky
+          position: isKeyboardOpen ? 'sticky' : 'fixed'
+        }}
+      >
         <div className="container-custom">
           <div className="flex items-center justify-between max-w-4xl mx-auto">
             <button
