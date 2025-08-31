@@ -5,7 +5,6 @@ interface OptimizedImageProps {
   alt: string;
   className?: string;
   style?: React.CSSProperties;
-  placeholder?: string;
   priority?: boolean; // Per immagini critiche above-the-fold
 }
 
@@ -14,7 +13,6 @@ const OptimizedImage = ({
   alt, 
   className = '', 
   style, 
-  placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmMWY1ZjkiLz4KPHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTRhM2I4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2FyaWNhbWVudG8uLi48L3RleHQ+Cjwvc3ZnPg==',
   priority = false 
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
