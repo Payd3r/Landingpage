@@ -58,14 +58,29 @@ const OptimizedImage = ({
       className={`relative overflow-hidden ${className}`}
       style={style}
     >
-      {/* Placeholder */}
+      {/* Loader animato moderno */}
       {!isLoaded && !hasError && (
-        <img
-          src={placeholder}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-          style={{ opacity: isLoaded ? 0 : 1 }}
-        />
+        <div className="absolute inset-0 image-loader flex items-center justify-center">
+          <div className="flex flex-col items-center space-y-4 bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            {/* Spinner a doppio anello */}
+            <div className="relative w-12 h-12">
+              {/* Anello esterno */}
+              <div className="w-12 h-12 border-3 border-slate-200 rounded-full opacity-20"></div>
+              {/* Anello interno rotante */}
+              <div className="w-12 h-12 border-3 border-slate-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+              {/* Punto centrale */}
+              <div className="w-2 h-2 bg-slate-600 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 loader-pulse"></div>
+            </div>
+            {/* Testo del loader con animazione */}
+            <div className="text-slate-700 text-sm font-medium loader-pulse">
+              Caricamento immagine...
+            </div>
+            {/* Barra di progresso simulata */}
+            <div className="w-20 h-1 bg-slate-200 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-slate-600 to-slate-500 rounded-full animate-pulse"></div>
+            </div>
+          </div>
+        </div>
       )}
       
       {/* Immagine principale */}
@@ -75,8 +90,10 @@ const OptimizedImage = ({
           alt={alt}
           onLoad={handleLoad}
           onError={handleError}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
+          className={`w-full h-full object-cover transition-all duration-500 ease-out transform ${
+            isLoaded 
+              ? 'opacity-100 scale-100' 
+              : 'opacity-0 scale-105'
           }`}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"
