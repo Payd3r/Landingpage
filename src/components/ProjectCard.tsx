@@ -14,6 +14,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       'project-1': '/cardCover/i_gladiatori.jpg', // Placeholder per ora
       'project-2': '/cardCover/betta47.jpg',
       'project-3': '/cardCover/le_chic.jpg', // Placeholder per ora
+      'project-4': '/cardCover/la_lariana.jpg',
     };
     return imageMap[projectId] || null;
   };
