@@ -55,7 +55,7 @@ src/
 1. **Clona il repository**
    ```bash
    git clone <repository-url>
-   cd revai
+   cd ravai
    ```
 
 2. **Installa le dipendenze**
@@ -210,7 +210,7 @@ Il progetto è compatibile con qualsiasi provider che supporta siti statici.
 Crea un file `.env`:
 ```env
 VITE_APP_TITLE=Vetrina
-VITE_APP_DESCRIPTION=Vetrina Revai
+VITE_APP_DESCRIPTION=Vetrina ravai
 ```
 
 ### SEO

@@ -1,6 +1,6 @@
-const CACHE_NAME = 'revai-v1';
-const STATIC_CACHE = 'revai-static-v1';
-const DYNAMIC_CACHE = 'revai-dynamic-v1';
+const CACHE_NAME = 'ravai-v1';
+const STATIC_CACHE = 'ravai-static-v1';
+const DYNAMIC_CACHE = 'ravai-dynamic-v1';
 
 // Risorse da cachare immediatamente
 const STATIC_ASSETS = [

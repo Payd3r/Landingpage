@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
             <p className="text-slate-400 text-sm">
-              © {currentYear} Revai. Tutti i diritti riservati.
+              © {currentYear} Ravai. Tutti i diritti riservati.
             </p>
           </div>
           
