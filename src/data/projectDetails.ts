@@ -211,5 +211,74 @@ export const projectDetails: Record<string, ProjectDetail> = {
       author: 'Cinzia Verdi',
       role: 'Proprietaria Le Chic di Cinzia'
     }
+  },
+
+  'project-4': {
+    id: 'project-4',
+    title: 'La Lariana',
+    subtitle: 'Pizzeria d\'Asporto',
+    description: 'Sito web per pizzeria d\'asporto con posti a sedere, specializzata in pizze con impasto integrale e senza glutine.',
+    year: 2025,
+    client: 'La Lariana',
+    url: 'https://lariana.andrea-mauri.duckdns.org/',
+    category: 'Pizzeria & Ristorante',
+    
+    businessGoals: [
+      'Creare una presenza online professionale per la pizzeria',
+      'Presentare l\'offerta di pizze speciali (integrale e senza glutine)',
+      'Facilitare l\'ordinazione e il contatto con i clienti',
+      'Valorizzare la location di Erba e i servizi offerti'
+    ],
+    
+    features: [
+      'Menu digitale completo con pizze tradizionali e speciali',
+      'Sezione dedicata alle pizze con impasto integrale',
+      'Sezione per pizze senza glutine per celiaci',
+      'Informazioni sulla pizzeria e sulla location di Erba',
+      'Form di contatto per ordinazioni',
+      'Design responsive ottimizzato per mobile',
+      'Galleria fotografica dei prodotti',
+      'Informazioni sui posti a sedere disponibili'
+    ],
+    
+    results: [
+      'Sito web moderno e professionale creato da zero',
+      'Miglioramento della visibilità online della pizzeria',
+      'Esperienza utente ottimizzata per l\'ordinazione',
+      'Cliente completamente soddisfatto del risultato'
+    ],
+    
+    process: [
+      {
+        title: 'Analisi dei Requisiti',
+        description: 'Studio delle esigenze specifiche della pizzeria e del target di clientela'
+      },
+      {
+        title: 'Design dell\'Interfaccia',
+        description: 'Creazione di un design accogliente e appetitoso per valorizzare i prodotti'
+      },
+      {
+        title: 'Sviluppo del Sito',
+        description: 'Implementazione delle funzionalità per menu digitale e sistema di contatti'
+      },
+      {
+        title: 'Ottimizzazione e Lancio',
+        description: 'Test finali, ottimizzazione per dispositivi mobili e messa online'
+      }
+    ],
+    
+    mockups: [
+      '/carouselMockup/La_Lariana/1.png',
+      '/carouselMockup/La_Lariana/2.png',
+      '/carouselMockup/La_Lariana/3.png',
+    ],
+    
+    heroImage: '/carouselMockup/La_Lariana/0.png',
+    
+    testimonial: {
+      text: 'Sono completamente soddisfatto del nuovo sito web! Ora i nostri clienti possono vedere facilmente tutte le nostre specialità, dalle pizze tradizionali a quelle integrali e senza glutine. Il sito rappresenta perfettamente la nostra pizzeria.',
+      author: 'Marco Colombo',
+      role: 'Proprietario La Lariana'
+    }
   }
 }; 

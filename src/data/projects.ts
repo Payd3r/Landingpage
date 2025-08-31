@@ -36,6 +36,18 @@ export const projects: Project[] = [
     url: 'https://lechic.andrea-mauri.duckdns.org/',
     github: 'https://github.com/Payd3r/LeChic',
     category: 'Centro Estetico'
+  },
+  {
+    id: 'project-4',
+    title: 'La Lariana',
+    subtitle: 'Pizzeria d\'Asporto',
+    description: 'Sito web per pizzeria d\'asporto con posti a sedere, specializzata in pizze con impasto integrale e senza glutine.',
+    image: '/cardCover/la_lariana.jpg',
+    year: 2025,
+    client: 'La Lariana',
+    url: 'https://lariana.andrea-mauri.duckdns.org/',
+    github: 'https://github.com/Payd3r/Lariana',
+    category: 'Pizzeria & Ristorante'
   }
 ];
 

@@ -1,4 +1,4 @@
-import { Code, Camera, Heart, Zap, Star, CheckCircle, ExternalLink, Instagram } from 'lucide-react';
+import { Code, Camera, Heart, Zap, Star, CheckCircle, ExternalLink, Instagram, Globe, FileText, Palette, Megaphone } from 'lucide-react';
 
 const About = () => {
   const teamMembers = [
@@ -28,7 +28,7 @@ const About = () => {
         {
           name: 'Base',
           originalPrice: 200,
-          discountedPrice: 140,
+          discountedPrice: 60,
           features: [
             'Sito 3 pagine (Home – Struttura – Servizi)',
             '20 foto professionali',
@@ -41,7 +41,7 @@ const About = () => {
         {
           name: 'Pro',
           originalPrice: 300,
-          discountedPrice: 210,
+          discountedPrice: 180,
           isPopular: true,
           features: [
             'Tutto del Base, più:',
@@ -57,7 +57,7 @@ const About = () => {
         {
           name: 'Premium',
           originalPrice: 450,
-          discountedPrice: 315,
+          discountedPrice: 405,
           features: [
             'Tutto del Pro, più:',
             'House tour video',
@@ -77,7 +77,7 @@ const About = () => {
         {
           name: 'Base',
           originalPrice: 180,
-          discountedPrice: 126,
+          discountedPrice: 54,
           features: [
             'Sito 3 pagine (Home – Menù – Contatti)',
             '20 foto professionali',
@@ -89,7 +89,7 @@ const About = () => {
         {
           name: 'Pro',
           originalPrice: 280,
-          discountedPrice: 196,
+          discountedPrice: 168,
           isPopular: true,
           features: [
             'Tutto del Base, più:',
@@ -105,7 +105,7 @@ const About = () => {
         {
           name: 'Premium',
           originalPrice: 420,
-          discountedPrice: 294,
+          discountedPrice: 378,
           features: [
             'Tutto del Pro, più:',
             'Sistema prenotazioni online',
@@ -125,7 +125,7 @@ const About = () => {
         {
           name: 'Base',
           originalPrice: 180,
-          discountedPrice: 126,
+          discountedPrice: 54,
           isPopular: true,
           features: [
             'Sito 3 pagine (Home – Servizi o Galleria – Contatti)',
@@ -138,7 +138,7 @@ const About = () => {
         {
           name: 'Pro',
           originalPrice: 280,
-          discountedPrice: 196,
+          discountedPrice: 168,
           features: [
             'Tutto del Base, più:',
             'Multilingua (ITA+ENG)',
@@ -152,7 +152,7 @@ const About = () => {
         {
           name: 'Premium',
           originalPrice: 420,
-          discountedPrice: 294,
+          discountedPrice: 378,
           features: [
             'Tutto del Pro, più:',
             'Sistema gestionale appuntamenti (es. Calendly integrato)',
@@ -168,18 +168,96 @@ const About = () => {
   ];
 
   const extras = [
-    { name: 'Pagina aggiuntiva', price: 15 },
-    { name: 'Video recensioni clienti', price: 15 },
-    { name: 'Traduzioni aggiuntive', price: 25, note: '/lingua' },
-    { name: 'Blog/news page', price: 15, note: '/pagina o 30€/mese' },
-    { name: 'Brochure', price: 20 },
-    { name: 'Biglietto da visita', price: 50 },
-    { name: 'Logo', price: 30 },
-    { name: 'Mini Kit Canva per stories/post', price: 25 },
-    { name: 'Template listino prezzi', price: 10 },
-    { name: 'Newsletter', price: 20, note: '/mese' },
-    { name: 'Menu delivery/asporto online', price: 30, note: 'da' },
-    { name: 'Gestione newsletter', price: 20, note: '/mese' }
+    // 🌐 SVILUPPO WEB - 3 servizi
+    { 
+      name: 'Pagine aggiuntive', 
+      description: 'Aggiungi sezioni extra al tuo sito (Chi siamo, FAQ, Policies, Termini)',
+      price: 15,
+      note: 'per pagina',
+      category: 'web'
+    },
+    { 
+      name: 'Traduzioni professionali', 
+      description: 'Traduzioni certificate in lingue extra oltre ITA/ENG con revisione madrelingua',
+      price: 25, 
+      note: 'per lingua',
+      category: 'web'
+    },
+    { 
+      name: 'Sistema e-commerce', 
+      description: 'Integrazione completa per vendita online con carrello e pagamenti',
+      price: 150, 
+      note: 'setup completo',
+      category: 'web'
+    },
+
+    // 📈 MARKETING & SOCIAL - 3 servizi  
+    { 
+      name: 'Kit Marketing Completo', 
+      description: 'Brochure digitale + template listino prezzi + materiale promozionale',
+      price: 35,
+      note: 'pacchetto completo',
+      category: 'marketing'
+    },
+    { 
+      name: 'Social Media Kit', 
+      description: 'Template Canva personalizzati per stories, post e copertine social',
+      price: 40,
+      note: '20+ template',
+      category: 'marketing'
+    },
+    { 
+      name: 'Sistema Newsletter Pro', 
+      description: 'Setup newsletter con automazioni, template e gestione completa',
+      price: 60, 
+      note: 'setup + 3 mesi gestione',
+      category: 'marketing'
+    },
+
+    // 🎨 BRANDING & DESIGN - 3 servizi
+    { 
+      name: 'Logo professionale', 
+      description: 'Creazione logo personalizzato con varianti e manuale brand',
+      price: 80,
+      note: 'con brand guidelines',
+      category: 'branding'
+    },
+    { 
+      name: 'Biglietti da visita', 
+      description: 'Design professionale per biglietti da visita stampabili + versione digitale',
+      price: 35,
+      category: 'branding'
+    },
+    { 
+      name: 'Brand Identity Kit', 
+      description: 'Pacchetto completo: colori, font, pattern e template coordinati',
+      price: 120,
+      note: 'identità completa',
+      category: 'branding'
+    },
+
+    // 📹 CONTENUTI VIDEO - 3 servizi
+    { 
+      name: 'Video testimonianze', 
+      description: 'Video recensioni professionali dei tuoi clienti con editing',
+      price: 50,
+      note: 'fino a 3 video',
+      category: 'content'
+    },
+    { 
+      name: 'Video promozionale', 
+      description: 'Video presentazione della tua attività con riprese e montaggio',
+      price: 200,
+      note: 'video da 60-90 secondi',
+      category: 'content'
+    },
+    { 
+      name: 'Content Creation', 
+      description: 'Foto e video prodotti/servizi per social media e sito web',
+      price: 150,
+      note: '50+ contenuti',
+      category: 'content'
+    }
   ];
 
   return (
@@ -289,8 +367,13 @@ const About = () => {
             <h2 className="text-4xl font-bold text-slate-900 mb-4">I nostri pacchetti</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Soluzioni complete e personalizzate per ogni esigenza. 
-              <span className="font-semibold text-slate-900"> Tutti i prezzi scontati del 30%!</span>
+              <span className="font-semibold text-slate-900"> Sconti fino al 70%!</span>
             </p>
+            <div className="mt-4">
+              <span className="inline-block bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold animate-pulse">
+                🔥 Solo 2 siti rimanenti a questo prezzo!
+              </span>
+            </div>
           </div>
           
           <div className="space-y-16">
@@ -313,7 +396,14 @@ const About = () => {
                           <span className="text-3xl font-bold text-slate-900">€{plan.discountedPrice}</span>
                           <span className="text-lg text-slate-500 line-through">€{plan.originalPrice}</span>
                         </div>
-                        <span className="text-sm text-green-600 font-semibold">Sconto 30%</span>
+                        <div className="flex flex-col items-center gap-1">
+                          <span className="text-sm text-green-600 font-semibold">
+                            Sconto {plan.name === 'Base' ? '70%' : plan.name === 'Pro' ? '40%' : '10%'}
+                          </span>
+                          {(plan.name === 'Base' || plan.name === 'Pro') && (
+                            <span className="text-xs text-red-600 font-medium">Offerta limitata!</span>
+                          )}
+                        </div>
                       </div>
                       <div className="flex-1">
                         <ul className="space-y-3">
@@ -340,25 +430,86 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Servizi aggiuntivi</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Personalizza ulteriormente il tuo pacchetto con questi servizi extra
+              Personalizza ulteriormente il tuo pacchetto con questi servizi professionali
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {extras.map((extra, index) => (
-              <div key={index} className="card p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">{extra.name}</h3>
-                    {extra.note && (
-                      <p className="text-sm text-slate-500">{extra.note}</p>
-                    )}
+          {/* Organize by category */}
+          {[
+            { 
+              category: 'web', 
+              title: 'Sviluppo Web',
+              icon: Globe,
+              services: extras.filter(e => e.category === 'web')
+            },
+            { 
+              category: 'marketing', 
+              title: 'Marketing & Social',
+              icon: Megaphone,
+              services: extras.filter(e => e.category === 'marketing')
+            },
+            { 
+              category: 'branding', 
+              title: 'Branding & Design',
+              icon: Palette,
+              services: extras.filter(e => e.category === 'branding')
+            },
+            { 
+              category: 'content', 
+              title: 'Contenuti Video',
+              icon: FileText,
+              services: extras.filter(e => e.category === 'content')
+            }
+          ].map((categoryGroup, groupIndex) => (
+            categoryGroup.services.length > 0 && (
+              <div key={groupIndex} className="mb-16 last:mb-0">
+                {/* Category Header */}
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 bg-slate-100 px-6 py-3 rounded-full mb-4">
+                    <categoryGroup.icon className="w-6 h-6 text-slate-700" />
+                    <h3 className="text-2xl font-bold text-slate-900">{categoryGroup.title}</h3>
                   </div>
-                  <span className="text-lg font-bold text-slate-900">€{extra.price}</span>
+                  <div className="w-24 h-1 bg-gradient-to-r from-slate-700 to-slate-900 mx-auto rounded-full"></div>
+                </div>
+                
+                {/* Services Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {categoryGroup.services.map((extra, index) => (
+                    <div 
+                      key={index} 
+                      className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border border-slate-100 hover:border-slate-300"
+                    >
+                      {/* Header with price */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex-1">
+                          <h4 className="font-bold text-slate-900 text-xl mb-2 group-hover:text-slate-700 transition-colors">
+                            {extra.name}
+                          </h4>
+                        </div>
+                        <div className="text-right ml-4">
+                          <div className="bg-slate-900 text-white px-4 py-2 rounded-xl">
+                            <span className="text-2xl font-bold">€{extra.price}</span>
+                          </div>
+                          {extra.note && (
+                            <p className="text-xs text-slate-500 mt-2 italic">{extra.note}</p>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Description */}
+                      <div className="relative">
+                        <p className="text-slate-600 leading-relaxed text-sm">
+                          {extra.description}
+                        </p>
+                        {/* Subtle accent line */}
+                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 group-hover:w-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            )
+          ))}
         </div>
       </section>
 
