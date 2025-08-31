@@ -62,8 +62,12 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-slate-900">
-            Ravai
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/1.png" 
+              alt="Ravai" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
