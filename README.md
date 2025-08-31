@@ -55,7 +55,7 @@ src/
 1. **Clona il repository**
    ```bash
    git clone <repository-url>
-   cd Landingpage
+   cd revai
    ```
 
 2. **Installa le dipendenze**
