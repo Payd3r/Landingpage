@@ -1,4 +1,4 @@
-# Portfolio Landing Page
+# Vetrina Landing Page
 
 Un sito web professionale per presentare i tuoi progetti ai clienti. Creato con React, TypeScript, Tailwind CSS e Vite.
 
@@ -209,14 +209,14 @@ Il progetto è compatibile con qualsiasi provider che supporta siti statici.
 ### Variabili d'Ambiente
 Crea un file `.env`:
 ```env
-VITE_APP_TITLE=Portfolio
-VITE_APP_DESCRIPTION=Portfolio di Andrea Mauri
+VITE_APP_TITLE=Vetrina
+VITE_APP_DESCRIPTION=Vetrina Revai
 ```
 
 ### SEO
 Modifica `index.html` per ottimizzare SEO:
 ```html
-<meta name="description" content="Portfolio di Andrea Mauri">
+<meta name="description" content="Vetrina progetti di Andrea Mauri">
 <meta name="keywords" content="sviluppatore web, React, TypeScript">
 ```
 
