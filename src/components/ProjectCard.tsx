@@ -1,5 +1,6 @@
 import type { Project } from '../types/Project';
 import { ExternalLink, Github, Calendar } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 interface ProjectCardProps {
   project: Project;
@@ -27,7 +28,13 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       {/* Image */}
       <div className="relative overflow-hidden">
         {cardImage ? (
-          <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${cardImage})` }}>
+          <div className="aspect-[4/3] relative">
+            <OptimizedImage
+              src={cardImage}
+              alt={`${project.title} - ${project.subtitle}`}
+              className="absolute inset-0"
+              priority={false} // Lazy load per le card
+            />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
           </div>
         ) : (

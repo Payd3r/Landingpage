@@ -12,7 +12,7 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the app
+# Build l'app (le immagini possono essere ottimizzate localmente se necessario)
 RUN npm run build
 
 # Production stage

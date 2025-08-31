@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:optimized": "npm run optimize:images && npm run build",
+    "build:analyze": "npm run build && npm run analyze:performance",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images": "node scripts/optimize-images.js",
+    "analyze:performance": "node scripts/performance-analysis.js"
   },
   "dependencies": {
     "lucide-react": "^0.533.0",
