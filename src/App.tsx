@@ -37,6 +37,11 @@ function AppContent() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Route speciali per URL con parametri di esclusione */}
+          <Route path="/asnd1acnk" element={<Projects />} /> {/* Esclude I Gladiatori */}
+          <Route path="/bnt2xcvb" element={<Projects />} /> {/* Esclude Betta47 */}
+          <Route path="/clm3qwer" element={<Projects />} /> {/* Esclude Le Chic */}
+          <Route path="/dlr4tyui" element={<Projects />} /> {/* Esclude La Lariana */}
         </Routes>
       </Suspense>
       {!hideFooter && <Footer />}
