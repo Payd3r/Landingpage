@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,13 +11,36 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implementare invio email
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Configurazione EmailJS
+      const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = EMAILJS_CONFIG;
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'info@ravai.it'
+      };
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Errore invio email:', error);
+      setError('Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,8 +54,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@ravai.com',
-      href: 'mailto:info@ravai.com'
+      value: 'info@ravai.it',
+      href: 'mailto:info@ravai.it'
     },
     {
       icon: Phone,
@@ -70,6 +95,14 @@ const Contact = () => {
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Invia un messaggio</h2>                
               </div>
+
+              {error && (
+                <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl p-8 text-center mb-6">
+                  <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Errore</h3>
+                  <p className="text-slate-600">{error}</p>
+                </div>
+              )}
 
               {isSubmitted ? (
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 text-center">
@@ -148,10 +181,20 @@ const Contact = () => {
                   
                   <button
                     type="submit"
-                    className="btn-primary w-full text-lg py-4"
+                    disabled={isLoading}
+                    className="btn-primary w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Invia messaggio
+                    {isLoading ? (
+                      <>
+                        <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Invio in corso...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Invia messaggio
+                      </>
+                    )}
                   </button>
                 </form>
               )}
