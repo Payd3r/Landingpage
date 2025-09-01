@@ -29,19 +29,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'andreamauri2013@gmail.com',
-      href: 'mailto:andreamauri2013@gmail.com'
+      value: 'info@ravai.com',
+      href: 'mailto:info@ravai.com'
     },
     {
       icon: Phone,
       title: 'Telefono',
-      value: '+39 339 537 5902',
-      href: 'tel:+39339537590'
+      value: '+39 334 758 3173',
+      href: 'tel:+393347583173'
     },
     {
       icon: MapPin,
       title: 'Località',
-      value: 'Milano, Italia',
+      value: 'Como, Italia',
       href: '#'
     }
   ];
