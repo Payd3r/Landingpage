@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Email', href: 'mailto:andreamauri2013@gmail.com', icon: Mail },    
+    { name: 'Email', href: 'mailto:info@ravai.it', icon: Mail },    
     { name: 'GitHub', href: 'https://github.com/Payd3r', icon: Github },
   ];
 
