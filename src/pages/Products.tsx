@@ -107,7 +107,8 @@ const Products = () => {
           '20 foto professionali incluse',
           'Form contatti integrato',
           'Collegamento ai social',
-          'Hosting e dominio (10€/anno)'
+          'Hosting e dominio (15€/anno)',
+          'Primi 6 mesi di hosting GRATIS!'
         ]
       },
       {
@@ -124,7 +125,9 @@ const Products = () => {
           'Sito multilingua (ITA+ENG)',
           '10 foto aggiuntive',
           'Funzionalità avanzate',
-          'Sistema prenotazioni base'
+          'Sistema prenotazioni base',
+          'Hosting e dominio (15€/anno)',
+          'Primi 6 mesi di hosting GRATIS!'
         ]
       },
       {
@@ -140,7 +143,9 @@ const Products = () => {
           'Video promozionali',
           'SEO avanzato',
           'Analytics completo',
-          'Supporto prioritario'
+          'Supporto prioritario',
+          'Hosting e dominio (15€/anno)',
+          'Primi 6 mesi di hosting GRATIS!'
         ]
       }
     ];
@@ -482,6 +487,9 @@ const Products = () => {
                   <span className="text-base sm:text-lg font-bold text-slate-900">€{selectedPackage.discountedPrice}</span>
                   <span className="text-xs text-slate-500 line-through ml-1 sm:ml-2">€{selectedPackage.originalPrice}</span>
                 </div>
+              </div>
+              <div className="mt-2 p-2 bg-green-50 rounded-lg border border-green-200">
+                <p className="text-xs text-green-700 font-medium">🎉 Primi 6 mesi di hosting e dominio GRATIS (valore €7.50)</p>
               </div>
             </div>
           )}
